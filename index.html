@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brave Clone | Browser Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="lion-logo">
+        <svg viewBox="0 0 64 64" aria-label="Lion logo">
+          <path d="M32 3 53 13 59 31 48 50 32 61 16 50 5 31 11 13Z"
+                fill="#ff6534"/>
+          <path d="M15 17 25 12 32 17 39 12 49 17 46 34
+                   40 44 32 50 24 44 18 34Z" fill="#ffb34f"/>
+          <path d="M21 23 28 27 25 32 19 30Z" fill="#242329"/>
+          <path d="M43 23 36 27 39 32 45 30Z" fill="#242329"/>
+          <path d="M25 36 32 33 39 36 32 43Z" fill="#242329"/>
+          <path d="M28 45 32 48 36 45" fill="none"
+                stroke="#242329" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span>brave</span>
+    </div>
+
+    <div class="top-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme">☼</button>
+      <button class="icon-btn" id="settingsBtn" title="Settings">⚙</button>
+      <div class="profile">T</div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="hero">
+      <div class="hero-logo">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 3 53 13 59 31 48 50 32 61 16 50 5 31 11 13Z"
+                fill="#ff6534"/>
+          <path d="M15 17 25 12 32 17 39 12 49 17 46 34
+                   40 44 32 50 24 44 18 34Z" fill="#ffb34f"/>
+          <path d="M21 23 28 27 25 32 19 30ZM43 23 36 27 39 32 45 30Z"
+                fill="#242329"/>
+          <path d="M25 36 32 33 39 36 32 43Z" fill="#242329"/>
+        </svg>
+      </div>
+
+      <h1>Welcome to <span>Brave</span></h1>
+      <p class="subtitle">A faster, safer way to browse the web.</p>
+
+      <div class="clock" id="clock">00:00</div>
+      <div class="date" id="date">Loading date...</div>
+
+      <form class="search-box" id="searchForm">
+        <span class="search-icon">⌕</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search the web or enter a URL"
+          autocomplete="off"
+          aria-label="Search the web or enter a URL"
+          required
+        />
+        <button type="submit" title="Search">↵</button>
+      </form>
+
+      <div class="search-hint">Search with Google · Press Enter to explore</div>
+    </div>
+
+    <section class="shortcuts-section">
+      <div class="section-heading">
+        <h2>Your shortcuts</h2>
+        <button id="addShortcutBtn" class="add-btn">＋ Add shortcut</button>
+      </div>
+
+      <div class="shortcuts" id="shortcuts">
+        <a class="shortcut" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+          <div class="shortcut-icon google">G</div>
+          <span>Google</span>
+        </a>
+        <a class="shortcut" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+          <div class="shortcut-icon youtube">▶</div>
+          <span>YouTube</span>
+        </a>
+        <a class="shortcut" href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <div class="shortcut-icon github">⌘</div>
+          <span>GitHub</span>
+        </a>
+        <a class="shortcut" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+          <div class="shortcut-icon linkedin">in</div>
+          <span>LinkedIn</span>
+        </a>
+        <a class="shortcut" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">
+          <div class="shortcut-icon chatgpt">✳</div>
+          <span>ChatGPT</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="privacy-card">
+      <div class="privacy-icon">🛡</div>
+      <div class="privacy-copy">
+        <h3>Your privacy matters</h3>
+        <p>This demo page is designed with a Brave-inspired privacy theme.</p>
+      </div>
+      <a href="https://brave.com" target="_blank" rel="noopener noreferrer">
+        Explore Brave ↗
+      </a>
+    </section>
+
+    <footer>
+      <span>Designed for the curious.</span>
+      <span>HTML · CSS · JavaScript</span>
+    </footer>
+  </main>
+
+  <div class="modal-overlay" id="shortcutModal" hidden>
+    <form class="modal" id="shortcutForm">
+      <button type="button" class="modal-close" id="closeModal">×</button>
+      <h2>Add a shortcut</h2>
+      <p>Add your favourite website to the home page.</p>
+
+      <label for="siteName">Website name</label>
+      <input id="siteName" type="text" placeholder="e.g. Portfolio" maxlength="30" required />
+
+      <label for="siteUrl">Website URL</label>
+      <input id="siteUrl" type="text" placeholder="e.g. https://example.com" required />
+
+      <p id="formError" class="form-error" aria-live="polite"></p>
+      <button type="submit" class="save-btn">Save shortcut</button>
+    </form>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
